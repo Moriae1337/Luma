@@ -1,0 +1,24 @@
+# Configuration file with API keys
+config.json
+
+# Generated PDF files
+*.pdf
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+

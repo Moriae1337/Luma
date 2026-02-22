@@ -1,0 +1,6 @@
+PyQt6
+Pillow
+google-generativeai
+reportlab
+python-docx
+
