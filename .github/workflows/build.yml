@@ -16,10 +16,10 @@ jobs:
         include:
           - os: windows-latest
             artifact_name: luma-windows
-            binary_name: main.exe
+            binary_name: Luma.exe
           - os: ubuntu-latest
             artifact_name: luma-linux
-            binary_name: main
+            binary_name: Luma
 
     steps:
       - uses: actions/checkout@v4
@@ -41,11 +41,11 @@ jobs:
       - name: Build executable
         run: pyinstaller --onefile --windowed --name Luma main.py
 
-      - name: Rename binary
+      - name: Prepare release folder
         shell: bash
         run: |
-          mkdir release
-          mv dist/${{ matrix.binary_name }} release/${{ matrix.binary_name }}
+          mkdir -p release
+          mv dist/${{ matrix.binary_name }} release/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
